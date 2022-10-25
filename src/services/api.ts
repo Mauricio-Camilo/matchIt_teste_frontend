@@ -14,9 +14,11 @@ export const getAllCompanies = async () => {
   }
 
 export async function removeCompany(id : number) {
-  console.log("Chegou no api", id);
   await api.delete(`/companies/${id}`);
-  console.log("Passou pela requisição");
+}
+
+export async function updateCompany(formData : Company, id : any) {
+  await api.put(`/companies/${id}`,formData)
 }
 
 export interface Company {

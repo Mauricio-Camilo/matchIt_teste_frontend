@@ -21,7 +21,6 @@ export default function MainApp() {
         async function getCompanies() {
             try {
                 const companies = await getAllCompanies();
-                console.log(companies)
                 setCompanies(companies);
                 setPostCompany(false);
                 if (companies.length !== 0) {
@@ -49,7 +48,13 @@ export default function MainApp() {
                 })
             );
         } else
-            return <h1>Não há empresas cadastradas ainda!!!</h1>
+            return (
+                <>
+                    <h1>Não há empresas cadastradas ainda</h1>
+                    <h1>Clique no botão ao lado para fazer o cadastro!!!</h1>
+                </>
+            )
+
     }
 
     return (

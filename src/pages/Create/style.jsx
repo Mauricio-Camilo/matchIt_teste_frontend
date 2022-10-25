@@ -9,12 +9,19 @@ const Container = styled.div`
     padding-bottom: 25px;
 `
 const Title = styled.h1`
+    width: 400px;
     font-size: 32px;
     text-align: center;
     color: black;
     margin-top: 25px;
     margin-bottom: 20px;
-    width: 350px;
+`
+const IconHome = styled.p`
+    font-size: 30px;
+    /* position: absolute;
+    top: 10px;
+    right: 20px; */
+    cursor: pointer;
 `
 const Inputs = styled.div`
     display: flex;
@@ -50,6 +57,7 @@ const Button = styled.button`
 export {
     Container,
     Title,
+    IconHome,
     Inputs,
     Input,
     Button

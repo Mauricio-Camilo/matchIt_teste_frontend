@@ -2,10 +2,13 @@ import { SubContainer, ClientContainer, IconDelete, IconUpdate } from "./style";
 import { MdCreate } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
 import { removeCompany } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 function CompanyData(props : any) {
 
     const { id, name, cnpj, address } = props;
+
+    const navigate = useNavigate();
 
     function handleCompany() {
         return (
@@ -29,8 +32,7 @@ function CompanyData(props : any) {
         return (
             <>
                 <IconDelete onClick={() => deleteCompany(id)}><AiFillDelete/></IconDelete>
-                {/* <IconUpdate id="update" onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate> */}
-                <IconUpdate><MdCreate/></IconUpdate>
+                <IconUpdate onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate>
             </>
         )
     }

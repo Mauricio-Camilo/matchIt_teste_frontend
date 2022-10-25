@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Container, Title, Inputs, Input, Button } from "./style";
+import { Container, Title, IconHome, Inputs, Input, Button } from "./style";
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from "react-router-dom";
 import { createCompany } from "../../services/api";
 import { Company } from "../../services/api";
+import { ImHome } from "react-icons/im";
 
 function CreateCompany() {
 
@@ -20,13 +21,13 @@ function CreateCompany() {
     function handleInputs() {
         return (
             <Inputs>
-                <Input type="text" placeholder="Name" required
+                <Input type="text" placeholder="Nome" required
                     onChange={(e: any) => setName(e.target.value)} value={name}>
                 </Input>
                 <Input type="text" placeholder="CNPJ" required
                     onChange={(e: any) => setCnpj(e.target.value)} value={cnpj}>
                 </Input>
-                <Input type="text" placeholder="Address" required
+                <Input type="text" placeholder="Endereço" required
                     onChange={(e: any) => setAddress(e.target.value)} value={address}>
                 </Input>
             </Inputs>
@@ -34,14 +35,14 @@ function CreateCompany() {
     }
 
     async function saveCompany() {
-        if ( name === "" || cnpj === "" || address === "") {
-            alert("Selecione todas as opções antes de prosseguir com o cadastro");
+        if (name === "" || cnpj === "" || address === "") {
+            alert("Preencha todos os campos para finalizar o cadastro");
         }
         else {
             setSelected(true);
             setSignUp(loading);
             try {
-                const company : Company = {
+                const company: Company = {
                     name,
                     cnpj,
                     address
@@ -59,7 +60,8 @@ function CreateCompany() {
 
     return (
         <Container>
-            <Title>Cadastre a empresa</Title>
+            <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
+            <Title>Cadastre uma empresa</Title>
             {handleInputs()}
             <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>
         </Container>
