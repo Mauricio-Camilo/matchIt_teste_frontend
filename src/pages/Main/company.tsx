@@ -1,10 +1,11 @@
 import { SubContainer, ClientContainer, IconDelete, IconUpdate } from "./style";
 import { MdCreate } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
+import { removeCompany } from "../../services/api";
 
 function CompanyData(props : any) {
 
-    const { id, name, cnpj, address} = props;
+    const { id, name, cnpj, address } = props;
 
     function handleCompany() {
         return (
@@ -16,12 +17,19 @@ function CompanyData(props : any) {
         )
     }
 
+    async function deleteCompany(id : number) {
+        const checkDelete = window.confirm("Deseja deletar essa empresa?");
+        if (checkDelete) {
+            await removeCompany(id);
+            window.location.reload();
+        }
+    }
+
     function handleButtons() {
         return (
             <>
-                {/* <IconDelete id="delete" onClick={() => deleteClient(id)}><AiFillDelete/></IconDelete>
-                <IconUpdate id="update" onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate> */}
-                <IconDelete><AiFillDelete/></IconDelete>
+                <IconDelete onClick={() => deleteCompany(id)}><AiFillDelete/></IconDelete>
+                {/* <IconUpdate id="update" onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate> */}
                 <IconUpdate><MdCreate/></IconUpdate>
             </>
         )

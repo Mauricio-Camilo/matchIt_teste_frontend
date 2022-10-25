@@ -7,7 +7,6 @@ const Container = styled.div`
     align-items: center;
     margin-top: 60px;
     padding-bottom: 25px;
-
 `
 const Title = styled.h1`
     font-size: 32px;
@@ -17,7 +16,6 @@ const Title = styled.h1`
     margin-bottom: 20px;
     width: 350px;
 `
-
 const Inputs = styled.div`
     display: flex;
     flex-direction: column;
@@ -34,7 +32,6 @@ const Input = styled.input`
         color: gray;
     }
 `
-
 const Button = styled.button`
     width: 326px;
     height: 46px;

@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { getAllCompanies } from "../../services/api";
-import { Container, Title } from "./style";
+import { Container, Title, IconAdd, Div } from "./style";
 import { Oval } from 'react-loader-spinner';
 import CompanyData from "./company";
+import { GrAddCircle } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 export default function MainApp() {
 
     const [postCompany, setPostCompany] = useState(false);
     const [companies, setCompanies] = useState<any>([]);
     const [reloadPage, setReloadPage] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setPostCompany(true);
@@ -38,11 +42,11 @@ export default function MainApp() {
             return (
                 companies.map((company: any) => {
                     const { id, name, cnpj, address } = company;
-                        return (
-                            <CompanyData key={id} name={name} cnpj={cnpj}
-                             address={address} />
-                        )
-                    })
+                    return (
+                        <CompanyData key={id} id={id} name={name} cnpj={cnpj}
+                            address={address} />
+                    )
+                })
             );
         } else
             return <h1>Não há empresas cadastradas ainda!!!</h1>
@@ -50,7 +54,10 @@ export default function MainApp() {
 
     return (
         <Container>
-            <Title>Empresas Cadastradas</Title>
+            <Div>
+                <Title>Empresas Cadastradas</Title>
+                <IconAdd id="creation" onClick={() => navigate("/create")}><GrAddCircle /></IconAdd>
+            </Div>
             {handleCompanies()}
         </Container>
     )

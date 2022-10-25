@@ -7,19 +7,25 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    padding-top: 30px;
     padding-bottom: 50px;
-    margin-top: 50px;
     background-color: blue;
 `
+const Div = styled.div `
+    min-width: 350px;
+    max-width: 800px;
+    width: 80%;
+    position: relative;
+`
 const Title = styled.h1`
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     color: black;
     margin-top: 10px;
 `
 const SubContainer = styled.div`
     min-width: 350px;
-    max-width: 950px;
+    max-width: 800px;
     width: 80%;
     border: 1px solid black;
     padding: 10px 0;
@@ -48,35 +54,34 @@ const ClientContainer = styled.div`
             font-size: 20px;
         }
 `
-const IconDelete= styled.p`
-    font-size: var(--icon-size-desktop);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    cursor: pointer;
-
-    @media (max-width: 450px) {
-        font-size: var(--icon-size-mobile);
-        right: 15px;
-    }
-`
-const IconUpdate = styled.p`
-    font-size: var(--icon-size-desktop);
+const IconAdd = styled.p`
+    font-size: 30px;
     position: absolute;
     top: 10px;
     right: 20px;
     cursor: pointer;
-
-    @media (max-width: 450px) {
-        font-size: var(--icon-size-mobile);
-        right: 15px;
-    }
+`
+const IconDelete = styled.p`
+    font-size: 25px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    cursor: pointer;
+`
+const IconUpdate = styled.p`
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
 `
 export {
     Container,
+    Div,
     Title,
     SubContainer,
     ClientContainer,
+    IconAdd,
     IconDelete,
     IconUpdate
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Title, Inputs, Input, Button } from "./style";
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from "react-router-dom";
-import createCompany from "../../services/api";
+import { createCompany } from "../../services/api";
 import { Company } from "../../services/api";
 
 function CreateCompany() {
