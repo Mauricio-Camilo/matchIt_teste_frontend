@@ -3,7 +3,6 @@ import { getAllCompanies } from "../../services/api";
 import { Container, Title } from "./style";
 import { Oval } from 'react-loader-spinner';
 import CompanyData from "./company";
-import { Company } from "./../../services/api";
 
 export default function MainApp() {
 

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "./styles/globalStyle.jsx";
-import MainPage from './pages/Main';
+import MainApp from './pages/Main';
+import CreateCompany from "./pages/Create";
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
             <GlobalStyle />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
+                    <Route path="/" element={<MainApp />} />
+                    <Route path="/create" element={<CreateCompany />} />
                 </Routes>
             </BrowserRouter>
         </>
