@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Container, Title, IconHome, Inputs, Input, Button } from "./style";
-import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from "react-router-dom";
+
+import Header from "../../components/Header/Header";
 import { createCompany } from "../../services/api";
 import { Company } from "../../services/api";
+import { Container, Title, IconHome, Inputs, Input, Button } from "./style";
+
+import { ThreeDots } from 'react-loader-spinner';
 import { ImHome } from "react-icons/im";
 
 function CreateCompany() {
@@ -59,12 +62,15 @@ function CreateCompany() {
     }
 
     return (
-        <Container>
-            <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
-            <Title>Cadastre uma empresa</Title>
-            {handleInputs()}
-            <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>
-        </Container>
+        <>
+            <Header />
+            <Container>
+                <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
+                <Title>Cadastre uma empresa</Title>
+                {handleInputs()}
+                <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>
+            </Container>
+        </>
     )
 }
 

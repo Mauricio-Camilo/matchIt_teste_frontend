@@ -7,9 +7,10 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 50px;
-    background-color: blue;
+    margin-top: 60px;
+    background-color: #F2F2F2;
 `
 const Div = styled.div `
     min-width: 350px;
@@ -20,7 +21,7 @@ const Div = styled.div `
 const Title = styled.h1`
     font-size: 30px;
     text-align: center;
-    color: black;
+    color: #2173AA;
     margin-top: 10px;
 `
 const SubContainer = styled.div`
@@ -31,7 +32,7 @@ const SubContainer = styled.div`
     padding: 10px 0;
     display: flex;
     position: relative;
-    background-color: green;
+    background-color: lightgray;
 
         div {
             display: flex;

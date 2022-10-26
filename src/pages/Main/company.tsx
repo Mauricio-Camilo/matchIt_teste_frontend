@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
+import { removeCompany } from "../../services/api";
 import { SubContainer, ClientContainer, IconDelete, IconUpdate } from "./style";
+
 import { MdCreate } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
-import { removeCompany } from "../../services/api";
-import { useNavigate } from "react-router-dom";
 
 function CompanyData(props : any) {
 
@@ -43,7 +45,6 @@ function CompanyData(props : any) {
             {handleButtons()}
         </SubContainer>
     )
-
 }
 
 export default CompanyData;

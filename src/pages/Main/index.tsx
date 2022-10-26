@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+
+import Header from "../../components/Header/Header";
+import CompanyData from "./company";
 import { closeServerByAPIGet, getAllCompanies } from "../../services/api";
 import { Container, Title, IconClose, IconAdd, Div } from "./style";
+
 import { Oval } from 'react-loader-spinner';
-import CompanyData from "./company";
 import { GrAddCircle } from "react-icons/gr";
 import { GrLogout } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
@@ -52,7 +55,7 @@ export default function MainApp() {
             return (
                 <>
                     <h1>Não há empresas cadastradas ainda</h1>
-                    <h1>Clique no botão ao lado para fazer o cadastro!!!</h1>
+                    <h1>Clique no botão de + para fazer o cadastro!!!</h1>
                 </>
             )
     }
@@ -66,6 +69,8 @@ export default function MainApp() {
     }
 
     return (
+        <>
+        <Header />
         <Container>
             <Div>
                 <IconClose id="creation" onClick={() => closeServer()}><GrLogout /></IconClose>
@@ -74,5 +79,6 @@ export default function MainApp() {
             </Div>
             {handleCompanies()}
         </Container>
+        </>
     )
 }

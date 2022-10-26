@@ -53,9 +53,6 @@ strong {
 
 * {
   box-sizing: border-box;
-
-  --color-0: #99EBDC;
-  --color-1: #4fea17;
 }
 
 body {

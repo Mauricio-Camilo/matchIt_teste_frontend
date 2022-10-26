@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Container, IconHome, Title, Inputs, Input, Button } from "./../Create/style";
-import { ThreeDots } from 'react-loader-spinner';
-import { useNavigate, useParams } from "react-router-dom";
+
+import Header from "../../components/Header/Header";
 import { updateCompany } from "../../services/api";
 import { Company } from "../../services/api";
+import { Container, IconHome, Title, Inputs, Input, Button } from "./../Create/style";
+
+import { ThreeDots } from 'react-loader-spinner';
+import { useNavigate, useParams } from "react-router-dom";
 import { ImHome } from "react-icons/im";
-import { GrLogout } from "react-icons/gr";
 
 function UpdateCompanyPage() {
     const [name, setName] = useState("");
@@ -51,17 +53,20 @@ function UpdateCompanyPage() {
         catch (error) {
             setSelected(false);
             setSignUp("Atualizar");
-            alert("Ocorreu um erro ao cadastrar uma empresa")
+            alert("Ocorreu um erro ao atualizar os dados da empresa")
         }
     }
 
     return (
-        <Container>
-            <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
-            <Title>Atualize a empresa</Title>
-            {handleInputs()}
-            <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>
-        </Container>
+        <>
+            <Header />
+            <Container>
+                <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
+                <Title>Atualize a empresa</Title>
+                {handleInputs()}
+                <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>
+            </Container>
+        </>
     )
 }
 

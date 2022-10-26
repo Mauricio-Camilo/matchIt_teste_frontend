@@ -5,22 +5,19 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 80px;
     padding-bottom: 25px;
 `
 const Title = styled.h1`
     width: 400px;
     font-size: 32px;
     text-align: center;
-    color: black;
-    margin-top: 25px;
+    color: #2173AA;
+    margin-top: 15px;
     margin-bottom: 20px;
 `
 const IconHome = styled.p`
     font-size: 30px;
-    /* position: absolute;
-    top: 10px;
-    right: 20px; */
     cursor: pointer;
 `
 const Inputs = styled.div`
@@ -46,7 +43,7 @@ const Button = styled.button`
     font-weight: 700;
     border-radius: 5px;
     color: white;
-    background-color: blue;
+    background-color: #4615ea;
     display: flex;
     justify-content: center;
     align-items: center;
