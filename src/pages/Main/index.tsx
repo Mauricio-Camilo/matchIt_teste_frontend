@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getAllCompanies } from "../../services/api";
-import { Container, Title, IconAdd, Div } from "./style";
+import { closeServerByAPIGet, getAllCompanies } from "../../services/api";
+import { Container, Title, IconClose, IconAdd, Div } from "./style";
 import { Oval } from 'react-loader-spinner';
 import CompanyData from "./company";
 import { GrAddCircle } from "react-icons/gr";
+import { GrLogout } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
 export default function MainApp() {
@@ -54,12 +55,20 @@ export default function MainApp() {
                     <h1>Clique no botão ao lado para fazer o cadastro!!!</h1>
                 </>
             )
+    }
 
+    async function closeServer() {
+        const checkCloseServer = window.confirm("Deseja desligar o servidor?");
+        if (checkCloseServer) {
+            const message = await closeServerByAPIGet();
+            alert(message);
+        }
     }
 
     return (
         <Container>
             <Div>
+                <IconClose id="creation" onClick={() => closeServer()}><GrLogout /></IconClose>
                 <Title>Empresas Cadastradas</Title>
                 <IconAdd id="creation" onClick={() => navigate("/create")}><GrAddCircle /></IconAdd>
             </Div>

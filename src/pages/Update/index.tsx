@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Container, Title, Inputs, Input, Button } from "./../Create/style";
+import { Container, IconHome, Title, Inputs, Input, Button } from "./../Create/style";
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate, useParams } from "react-router-dom";
 import { updateCompany } from "../../services/api";
 import { Company } from "../../services/api";
+import { ImHome } from "react-icons/im";
+import { GrLogout } from "react-icons/gr";
 
 function UpdateCompanyPage() {
     const [name, setName] = useState("");
@@ -55,6 +57,7 @@ function UpdateCompanyPage() {
 
     return (
         <Container>
+            <IconHome onClick={() => navigate("/")}><ImHome /></IconHome>
             <Title>Atualize a empresa</Title>
             {handleInputs()}
             <Button selected={selected} onClick={() => saveCompany()}>{signUp}</Button>

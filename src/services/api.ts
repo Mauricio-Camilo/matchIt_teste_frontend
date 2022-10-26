@@ -18,7 +18,12 @@ export async function removeCompany(id : number) {
 }
 
 export async function updateCompany(formData : Company, id : any) {
-  await api.put(`/companies/${id}`,formData)
+  await api.put(`/companies/${id}`,formData);
+}
+
+export async function closeServerByAPIGet() {
+  const response = await api.get('/close');
+  return response.data;
 }
 
 export interface Company {

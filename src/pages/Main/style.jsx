@@ -54,11 +54,18 @@ const ClientContainer = styled.div`
             font-size: 20px;
         }
 `
-const IconAdd = styled.p`
+const IconClose = styled.p`
     font-size: 30px;
     position: absolute;
     top: 10px;
     right: 20px;
+    cursor: pointer;
+`
+const IconAdd = styled.p`
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
     cursor: pointer;
 `
 const IconDelete = styled.p`
@@ -81,6 +88,7 @@ export {
     Title,
     SubContainer,
     ClientContainer,
+    IconClose,
     IconAdd,
     IconDelete,
     IconUpdate
